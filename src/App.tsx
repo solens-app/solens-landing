@@ -1,26 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
 import { ArrowRight, ArrowUpRight, Check, Shield, Sparkles, Zap } from "lucide-react";
 import { ParticleField } from "@/components/landing/ParticleField";
 import { ChatMock } from "@/components/landing/ChatMock";
-
-const TITLE = "Solens — Talk to Solana. It'll do the rest.";
-const DESCRIPTION =
-  "Solens turns plain English into onchain action. Swap, send, snipe launches, provide liquidity, hunt memecoins, place prediction trades — all from one chat.";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: LandingPage,
-});
 
 function Logo({ className = "" }: { className?: string }) {
   return (
@@ -598,3 +579,5 @@ function LandingPage() {
     </div>
   );
 }
+
+export default LandingPage;

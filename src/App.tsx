@@ -28,7 +28,7 @@ function Nav() {
           <a href="#refer" className="hover:text-foreground transition-colors">Refer & earn</a>
         </nav>
         <a
-          href="#cta"
+          href="https://terminal.solens.app/"
           className="group inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-[0_0_28px_-6px_rgba(112,5,252,0.85)] hover:bg-primary/90 transition-all"
         >
           Launch Solens
@@ -89,18 +89,21 @@ function Hero() {
 
           <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-5">
             <a
-              href="#cta"
+              href="https://terminal.solens.app/"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_0_40px_-8px_rgba(112,5,252,0.9)] hover:shadow-[0_0_60px_-4px_rgba(112,5,252,1)] transition-all"
             >
               Launch Solens
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
-            <div className="flex flex-col">
-              <span className="text-sm text-foreground">Free to try.</span>
-              <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-                Connect a wallet in 10 seconds
-              </span>
-            </div>
+            <a
+              href="https://t.me/sollensbot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-7 py-3.5 text-sm font-medium text-foreground hover:border-primary/50 hover:bg-card transition-all"
+            >
+              Open Telegram bot
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
 
@@ -523,7 +526,7 @@ function FinalCTA() {
         </p>
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
-            href="#"
+            href="https://terminal.solens.app/"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-[0_0_60px_-6px_rgba(112,5,252,0.95)] hover:shadow-[0_0_80px_-2px_rgba(112,5,252,1)] transition-all"
           >
             Launch Solens

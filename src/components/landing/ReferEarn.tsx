@@ -1,0 +1,76 @@
+import { ArrowRight, Check, Sparkles } from "lucide-react";
+
+/**
+ * Marketing-only section. The real invite code lives in the Solens app, which
+ * is what owns referral attribution — the landing page deliberately holds no
+ * referral state of its own.
+ */
+const steps = [
+  "Open Solens and go to Refer & Earn",
+  "Copy your invite code",
+  "Share it — you earn on every trade they make",
+];
+
+export function ReferEarn() {
+  return (
+    <section id="refer" className="border-b border-border py-28">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="relative rounded-3xl border border-white/15 bg-card/60 backdrop-blur p-10 md:p-14 overflow-hidden">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+          <div className="relative flex flex-col md:flex-row md:items-center gap-10">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 mb-6">
+                <Sparkles className="size-4 text-primary" />
+                <span className="font-mono text-[12.5px] uppercase tracking-[0.22em] text-primary">
+                  Refer &amp; Earn
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+                Bring your group chat. Earn while you sleep.
+              </h2>
+              <p className="mt-5 text-xl text-muted-foreground leading-relaxed max-w-xl">
+                Every friend you refer earns you a cut of their trading fees. Forever. Share your
+                code once — Solens does the math.
+              </p>
+              <div className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground">
+                <Check className="size-4 shrink-0 text-primary" />
+                10% of referred fees, forever
+              </div>
+            </div>
+
+            <div className="md:w-72 shrink-0">
+              <div className="rounded-xl border border-border bg-background/70 p-5">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                  Your invite code
+                </div>
+                <p className="mt-2 text-sm text-foreground">Grab it inside the app.</p>
+
+                <ol className="mt-4 space-y-2.5">
+                  {steps.map((step, i) => (
+                    <li
+                      key={step}
+                      className="flex gap-2.5 text-xs text-muted-foreground leading-relaxed"
+                    >
+                      <span className="font-mono text-primary">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+
+                <a
+                  href="https://terminal.solens.app/"
+                  className="group mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-2.5 text-xs font-medium uppercase tracking-widest text-primary-foreground shadow-[0_0_28px_-8px_rgba(112,5,252,0.9)] hover:bg-primary/90 transition-colors"
+                >
+                  Launch Solens
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

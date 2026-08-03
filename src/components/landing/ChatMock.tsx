@@ -30,12 +30,13 @@ export function ChatMock() {
         ref={ref}
         onPointerMove={onMove}
         onPointerLeave={onLeave}
-        style={{
-          transform:
-            "rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))",
-          transformStyle: "preserve-3d",
-          transition: "transform 200ms cubic-bezier(0.2,0.7,0.2,1)",
-        } as CSSProperties}
+        style={
+          {
+            transform: "rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))",
+            transformStyle: "preserve-3d",
+            transition: "transform 200ms cubic-bezier(0.2,0.7,0.2,1)",
+          } as CSSProperties
+        }
         className="relative rounded-2xl border border-border bg-card/80 backdrop-blur-xl shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden"
       >
         {/* specular highlight following cursor */}
@@ -75,8 +76,7 @@ export function ChatMock() {
             </div>
             <div className="flex-1 space-y-3">
               <p className="text-sm text-foreground/80">
-                Best route found via{" "}
-                <span className="text-foreground font-medium">Jupiter</span>.
+                Best route found via <span className="text-foreground font-medium">Jupiter</span>.
                 Ready to execute.
               </p>
 
@@ -91,14 +91,18 @@ export function ChatMock() {
                 </div>
                 <div className="flex items-end justify-between">
                   <div>
-                    <div className="text-2xl font-semibold tracking-tight">0.642 SOL</div>
+                    <div className="text-2xl font-semibold tracking-tight">1.381 SOL</div>
                     <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                       est. receipt
                     </div>
                   </div>
                   <div className="text-right text-xs text-muted-foreground space-y-0.5">
-                    <div>Slippage <span className="text-foreground">0.5%</span></div>
-                    <div>Fee <span className="text-foreground">$0.0002</span></div>
+                    <div>
+                      Slippage <span className="text-foreground">0.5%</span>
+                    </div>
+                    <div>
+                      Fee <span className="text-foreground">$0.0002</span>
+                    </div>
                   </div>
                 </div>
                 <button className="mt-4 w-full rounded-lg bg-primary py-2 text-xs font-medium uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-colors">
@@ -111,7 +115,9 @@ export function ChatMock() {
 
         {/* input */}
         <div className="relative border-t border-border px-5 py-3 flex items-center gap-3">
-          <span className="font-mono text-xs text-muted-foreground">Ask anything about crypto…</span>
+          <span className="font-mono text-xs text-muted-foreground">
+            Ask anything about crypto…
+          </span>
           <span className="ml-auto inline-block h-4 w-[2px] bg-primary cursor-blink" />
         </div>
       </div>

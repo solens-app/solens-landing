@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { ArrowRight, ArrowUpRight, Check, Shield, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Shield, Zap } from "lucide-react";
 import { ParticleField } from "@/components/landing/ParticleField";
 import { ChatMock } from "@/components/landing/ChatMock";
+import { ReferEarn } from "@/components/landing/ReferEarn";
 
 function Logo({ className = "" }: { className?: string }) {
   return (
@@ -22,10 +23,16 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center gap-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-          <a href="#how" className="hover:text-foreground transition-colors">How it works</a>
-          <a href="#refer" className="hover:text-foreground transition-colors">Refer & earn</a>
+        <nav className="hidden md:flex items-center gap-8 font-mono text-[14px] uppercase tracking-[0.18em] text-muted-foreground">
+          <a href="#features" className="hover:text-foreground transition-colors">
+            Features
+          </a>
+          <a href="#how" className="hover:text-foreground transition-colors">
+            How it works
+          </a>
+          <a href="#refer" className="hover:text-foreground transition-colors">
+            Refer & earn
+          </a>
         </nav>
         <a
           href="https://terminal.solens.app/"
@@ -68,7 +75,7 @@ function Hero() {
         <div className="fade-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-3 py-1 mb-8">
             <span className="size-1.5 rounded-full bg-primary pulse-dot" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="font-mono text-[12.5px] uppercase tracking-[0.2em] text-muted-foreground">
               Live on Solana Mainnet
             </span>
           </div>
@@ -79,9 +86,9 @@ function Hero() {
             <span className="text-muted-foreground">It&rsquo;ll do the rest.</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
-            Solens turns plain English into onchain action. Swap, send, snipe launches,
-            provide liquidity, hunt memecoins, place prediction trades — all from one chat.
+          <p className="mt-8 max-w-xl text-[22.5px] text-muted-foreground leading-relaxed">
+            Solens turns plain English into onchain action. Swap, send, snipe launches, provide
+            liquidity, hunt memecoins, place prediction trades — all from one chat.
             <span className="block mt-2 text-foreground/80">
               No dashboards. No tab-hopping. No degen tax for being new.
             </span>
@@ -116,12 +123,15 @@ function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-6 mt-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-border pt-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground text-center md:text-left">
+          <p className="font-mono text-[14px] uppercase tracking-[0.22em] text-muted-foreground text-center md:text-left">
             Built for Solana · Powered by AI · Trusted by traders moving real volume
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 opacity-60">
             {["JUPITER", "RAYDIUM", "PUMP.FUN", "KALSHI", "PHANTOM"].map((p) => (
-              <span key={p} className="font-mono text-xs tracking-tight text-muted-foreground hover:text-foreground transition-colors">
+              <span
+                key={p}
+                className="font-mono text-xs tracking-tight text-muted-foreground hover:text-foreground transition-colors"
+              >
                 {p}
               </span>
             ))}
@@ -142,15 +152,15 @@ function Pitch() {
         <h2 className="mt-6 text-4xl md:text-5xl font-semibold tracking-[-0.02em] leading-tight text-balance">
           Crypto shouldn&rsquo;t feel like a cockpit.
         </h2>
-        <p className="mt-8 text-lg text-muted-foreground leading-relaxed max-w-3xl">
-          Most Solana apps assume you already know what a bin step is, which DEX has the best
-          route, or how to read a pump.fun chart at 3 a.m. Solens doesn&rsquo;t. Tell it what you
-          want — <span className="text-foreground">&ldquo;buy $100 of SOL,&rdquo;</span>{" "}
+        <p className="mt-8 text-[22.5px] text-muted-foreground leading-relaxed max-w-3xl">
+          Most Solana apps assume you already know what a bin step is, which DEX has the best route,
+          or how to read a pump.fun chart at 3 a.m. Solens doesn&rsquo;t. Tell it what you want —{" "}
+          <span className="text-foreground">&ldquo;buy $100 of SOL,&rdquo;</span>{" "}
           <span className="text-foreground">&ldquo;show me trending memecoins,&rdquo;</span>{" "}
-          <span className="text-foreground">&ldquo;add LP to SOL/USDC&rdquo;</span> — and it handles the
-          routing, the safety checks, and the execution.
+          <span className="text-foreground">&ldquo;add LP to SOL/USDC&rdquo;</span> — and it handles
+          the routing, the safety checks, and the execution.
         </p>
-        <p className="mt-6 text-xl text-foreground/90 font-medium">
+        <p className="mt-6 text-[25px] text-foreground/90 font-medium">
           You stay in control. Solens does the homework.
         </p>
       </div>
@@ -194,11 +204,10 @@ function Feature({ idx, title, body, className = "", children }: FeatureProps) {
       {/* bottom accent line on hover */}
       <div className="pointer-events-none absolute inset-x-6 bottom-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-      <div className="relative flex items-start justify-between mb-6">
+      <div className="relative mb-6">
         <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-foreground/80">
           {idx}
         </span>
-        <ArrowUpRight className="size-4 text-muted-foreground transition-all group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       </div>
       <h3 className="relative text-xl md:text-2xl font-semibold tracking-tight">{title}</h3>
       <p className="relative mt-3 text-sm text-muted-foreground leading-relaxed">{body}</p>
@@ -212,7 +221,7 @@ function Features() {
     <section id="features" className="border-b border-border py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl mb-16">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+          <span className="font-mono text-[12.5px] uppercase tracking-[0.3em] text-primary">
             [ Capabilities ]
           </span>
           <h2 className="mt-6 text-4xl md:text-5xl font-semibold tracking-[-0.02em] leading-tight">
@@ -224,12 +233,15 @@ function Features() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <Feature
             idx="01 / Trade"
-            title="Swap, Send, Bridge"
+            title="Swap & Send"
             body="Type the trade, hit confirm. Solens finds the best path across Jupiter, Raydium, and the rest — wallet, .sol domain, or a friend."
           >
             <div className="flex flex-wrap gap-1.5">
-              {["JUPITER", "RAYDIUM", "ORCA", ".SOL", "MAYAN"].map((c) => (
-                <span key={c} className="rounded-md border border-border bg-background/60 px-2 py-1 font-mono text-[10px] text-muted-foreground">
+              {["JUPITER", "RAYDIUM", "ORCA", ".SOL"].map((c) => (
+                <span
+                  key={c}
+                  className="rounded-md border border-border bg-background/60 px-2 py-1 font-mono text-[10px] text-muted-foreground"
+                >
                   {c}
                 </span>
               ))}
@@ -247,9 +259,14 @@ function Features() {
                 { t: "$NORM", v: "+62%", g: true },
                 { t: "$FOG", v: "-12%", g: false },
               ].map((r) => (
-                <div key={r.t} className="flex items-center justify-between rounded-md bg-background/60 px-3 py-1.5 text-xs">
+                <div
+                  key={r.t}
+                  className="flex items-center justify-between rounded-md bg-background/60 px-3 py-1.5 text-xs"
+                >
                   <span className="font-mono text-foreground">{r.t}</span>
-                  <span className={`font-mono ${r.g ? "text-primary" : "text-muted-foreground"}`}>{r.v}</span>
+                  <span className={`font-mono ${r.g ? "text-primary" : "text-muted-foreground"}`}>
+                    {r.v}
+                  </span>
                 </div>
               ))}
             </div>
@@ -286,7 +303,9 @@ function Features() {
                 { l: "BIN", v: "20" },
               ].map((s) => (
                 <div key={s.l} className="rounded-md bg-background/60 px-3 py-2">
-                  <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">{s.l}</div>
+                  <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+                    {s.l}
+                  </div>
                   <div className="mt-0.5 text-sm font-semibold">{s.v}</div>
                 </div>
               ))}
@@ -330,7 +349,9 @@ function Features() {
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5">
                 you → solens
               </div>
-              <div className="text-xs text-foreground mb-2">&ldquo;what&rsquo;s underperforming?&rdquo;</div>
+              <div className="text-xs text-foreground mb-2">
+                &ldquo;what&rsquo;s underperforming?&rdquo;
+              </div>
               <div className="font-mono text-[10px] uppercase tracking-widest text-primary mb-1.5">
                 solens
               </div>
@@ -367,7 +388,17 @@ function Features() {
 }
 
 function Differentiator() {
-  const chips = ["SPL", "JUPITER", "RAYDIUM", "PUMP.FUN", "BONKBOT", "KALSHI", "PHANTOM", "SOLFLARE", "BACKPACK"];
+  const chips = [
+    "SPL",
+    "JUPITER",
+    "RAYDIUM",
+    "PUMP.FUN",
+    "BONKBOT",
+    "KALSHI",
+    "PHANTOM",
+    "SOLFLARE",
+    "BACKPACK",
+  ];
   return (
     <section className="relative overflow-hidden border-b border-border py-32 md:py-40">
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
@@ -382,10 +413,10 @@ function Differentiator() {
           <br />
           <span className="text-muted-foreground">Not Solana-bolted-on.</span>
         </h2>
-        <p className="mt-8 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
+        <p className="mt-8 max-w-2xl mx-auto text-xl text-muted-foreground leading-relaxed">
           Other AI crypto tools treat Solana as a checkbox. Solens was built around it — which is
-          why it can do things they can&rsquo;t: pump.fun launches, Bonkbot-style sniping, Jupiter routing,
-          Raydium LPs, SPL token everything. If it ships on Solana, Solens speaks it.
+          why it can do things they can&rsquo;t: pump.fun launches, Bonkbot-style sniping, Jupiter
+          routing, Raydium LPs, SPL token everything. If it ships on Solana, Solens speaks it.
         </p>
         <div className="mt-12 flex flex-wrap justify-center gap-2">
           {chips.map((c) => (
@@ -406,8 +437,8 @@ function HowItWorks() {
   const steps = [
     {
       n: "01",
-      t: "Connect your wallet",
-      b: "Phantom, Solflare, Backpack — pick yours. Ten seconds, no email, no KYC.",
+      t: "Sign in with email or Google",
+      b: "No seed phrase, no browser extension, no KYC. Your Solana wallet is ready in about ten seconds.",
     },
     {
       n: "02",
@@ -424,7 +455,7 @@ function HowItWorks() {
     <section id="how" className="border-b border-border py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl mb-16">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+          <span className="font-mono text-[12.5px] uppercase tracking-[0.3em] text-primary">
             [ How it works ]
           </span>
           <h2 className="mt-6 text-4xl md:text-5xl font-semibold tracking-[-0.02em] leading-tight">
@@ -436,55 +467,9 @@ function HowItWorks() {
             <div key={s.n} className="bg-background p-8 md:p-10">
               <div className="font-mono text-xs tracking-widest text-primary mb-8">{s.n}</div>
               <h3 className="text-2xl font-semibold tracking-tight">{s.t}</h3>
-              <p className="mt-4 text-muted-foreground leading-relaxed">{s.b}</p>
+              <p className="mt-4 text-xl text-muted-foreground leading-relaxed">{s.b}</p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ReferEarn() {
-  return (
-    <section id="refer" className="border-b border-border py-28">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="relative rounded-3xl border border-white/15 bg-card/60 backdrop-blur p-10 md:p-14 overflow-hidden">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-          <div className="relative flex flex-col md:flex-row md:items-center gap-10">
-            <div className="flex-1">
-              <div className="inline-flex items-center gap-2 mb-6">
-                <Sparkles className="size-4 text-primary" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-primary">
-                  Refer & Earn
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
-                Bring your group chat. Earn while you sleep.
-              </h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed max-w-xl">
-                Every friend you refer earns you a cut of their trading fees. Forever.
-                Share your code once — Solens does the math.
-              </p>
-            </div>
-            <div className="md:w-72 shrink-0">
-              <div className="rounded-xl border border-border bg-background/70 p-5">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
-                  Your invite code
-                </div>
-                <div className="flex items-center justify-between gap-3">
-                  <span className="font-mono text-2xl tracking-tight">KJN79Q</span>
-                  <button className="rounded-md border border-border px-3 py-1.5 text-xs hover:border-primary/60 hover:text-primary transition-colors">
-                    Copy
-                  </button>
-                </div>
-                <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
-                  <Check className="size-3.5 text-primary" />
-                  10% of referred fees, forever
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -511,7 +496,7 @@ function FinalCTA() {
       <div className="pointer-events-none absolute inset-0 spotlight" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,var(--background)_90%)]" />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-3 py-1 font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+        <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-3 py-1 font-mono text-[12.5px] uppercase tracking-[0.22em] text-muted-foreground">
           <Zap className="size-3 text-primary" />
           Ready when you are
         </span>
@@ -520,9 +505,9 @@ function FinalCTA() {
           <br />
           <span className="text-muted-foreground">finally simplified.</span>
         </h2>
-        <p className="mt-8 max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed">
-          Stop bouncing between Jupiter, Pump.fun, DEXScreener, Kalshi, and seven Telegram bots.
-          Solens is all of them — in one conversation.
+        <p className="mt-8 max-w-2xl mx-auto text-[22.5px] text-muted-foreground leading-relaxed">
+          Stop bouncing between Jupiter, Pump.fun, DEXScreener, Kalshi, and whichever Telegram bot
+          you&rsquo;re using this week. Solens is all of them — in one conversation.
         </p>
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
@@ -532,8 +517,8 @@ function FinalCTA() {
             Launch Solens
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </a>
-          <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-            No card required · Connect wallet to start
+          <span className="font-mono text-[14px] uppercase tracking-widest text-muted-foreground">
+            No card required · Email or Google to start
           </span>
         </div>
       </div>
@@ -547,15 +532,23 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div>
           <Logo />
-          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+          <p className="mt-3 font-mono text-[14px] uppercase tracking-[0.22em] text-muted-foreground">
             Solana at the speed of thought.
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
-          <a href="#" className="hover:text-foreground transition-colors">Twitter</a>
-          <a href="#" className="hover:text-foreground transition-colors">Telegram</a>
-          <a href="#" className="hover:text-foreground transition-colors">Docs</a>
-          <a href="#" className="hover:text-foreground transition-colors">Security</a>
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-[14px] uppercase tracking-[0.18em] text-muted-foreground">
+          <a href="#" className="hover:text-foreground transition-colors">
+            Twitter
+          </a>
+          <a href="#" className="hover:text-foreground transition-colors">
+            Telegram
+          </a>
+          <a href="#" className="hover:text-foreground transition-colors">
+            Docs
+          </a>
+          <a href="#" className="hover:text-foreground transition-colors">
+            Security
+          </a>
         </div>
         <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground/70">
           © 2026 Solens Labs

@@ -88,9 +88,10 @@ function Hero() {
 
           <p className="mt-8 max-w-xl text-[22.5px] text-muted-foreground leading-relaxed">
             Solens turns plain English into onchain action. Swap, send, snipe launches, provide
-            liquidity, hunt memecoins, place prediction trades — all from one chat.
+            liquidity, discover tokens, manage your portfolio, and access prediction markets — all
+            from one conversation.
             <span className="block mt-2 text-foreground/80">
-              No dashboards. No tab-hopping. No degen tax for being new.
+              No dashboards. No tab-hopping. No crypto jargon required.
             </span>
           </p>
 
@@ -108,7 +109,7 @@ function Hero() {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-7 py-3.5 text-sm font-medium text-foreground hover:border-primary/50 hover:bg-card transition-all"
             >
-              Open Telegram bot
+              Open Telegram Bot
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
@@ -124,7 +125,7 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 mt-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-border pt-8">
           <p className="font-mono text-[14px] uppercase tracking-[0.22em] text-muted-foreground text-center md:text-left">
-            Built for Solana · Powered by AI · Trusted by traders moving real volume
+            Built for Solana · Powered by AI · Made for execution
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 opacity-60">
             {["JUPITER", "RAYDIUM", "PUMP.FUN", "KALSHI", "PHANTOM"].map((p) => (
@@ -142,26 +143,25 @@ function Hero() {
   );
 }
 
-function Pitch() {
+function OneInterface() {
   return (
     <section className="border-b border-border py-28 md:py-36">
       <div className="mx-auto max-w-4xl px-6">
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-          [ The pitch ]
+          [ One interface ]
         </span>
         <h2 className="mt-6 text-4xl md:text-5xl font-semibold tracking-[-0.02em] leading-tight text-balance">
-          Crypto shouldn&rsquo;t feel like a cockpit.
+          Stop navigating Solana.
+          <br />
+          <span className="text-muted-foreground">Start talking to it.</span>
         </h2>
         <p className="mt-8 text-[22.5px] text-muted-foreground leading-relaxed max-w-3xl">
-          Most Solana apps assume you already know what a bin step is, which DEX has the best route,
-          or how to read a pump.fun chart at 3 a.m. Solens doesn&rsquo;t. Tell it what you want —{" "}
-          <span className="text-foreground">&ldquo;buy $100 of SOL,&rdquo;</span>{" "}
-          <span className="text-foreground">&ldquo;show me trending memecoins,&rdquo;</span>{" "}
-          <span className="text-foreground">&ldquo;add LP to SOL/USDC&rdquo;</span> — and it handles
-          the routing, the safety checks, and the execution.
+          Today, one workflow can mean opening Jupiter, checking DEXScreener, watching Pump.fun,
+          using a Telegram bot, opening a wallet, and moving between multiple interfaces. Solens
+          brings those workflows into one conversation.
         </p>
         <p className="mt-6 text-[25px] text-foreground/90 font-medium">
-          You stay in control. Solens does the homework.
+          Discover. Understand. Execute.
         </p>
       </div>
     </section>
@@ -234,10 +234,10 @@ function Features() {
           <Feature
             idx="01 / Trade"
             title="Swap & Send"
-            body="Type the trade, hit confirm. Solens finds the best path across Jupiter, Raydium, and the rest — wallet, .sol domain, or a friend."
+            body="Tell Solens what you want to trade or where you want to send it. Solens finds the route across Solana liquidity and prepares the transaction for confirmation."
           >
             <div className="flex flex-wrap gap-1.5">
-              {["JUPITER", "RAYDIUM", "ORCA", ".SOL"].map((c) => (
+              {["JUPITER", "RAYDIUM", "ORCA", "WALLETS", ".SOL"].map((c) => (
                 <span
                   key={c}
                   className="rounded-md border border-border bg-background/60 px-2 py-1 font-mono text-[10px] text-muted-foreground"
@@ -250,32 +250,25 @@ function Features() {
 
           <Feature
             idx="02 / Launch"
-            title="Snipe Pump.fun & Bonk"
-            body="Spin up a token or jump on launches the second liquidity hits. Solens scans Pump.fun continuously — volume, not noise."
+            title="Catch launches early"
+            body="Discover and act on new token launches without constantly refreshing feeds or jumping between bots. Solens tracks activity across the Solana ecosystem and surfaces relevant opportunities as they appear."
           >
-            <div className="space-y-1.5">
-              {[
-                { t: "$WIFEY", v: "+184%", g: true },
-                { t: "$NORM", v: "+62%", g: true },
-                { t: "$FOG", v: "-12%", g: false },
-              ].map((r) => (
-                <div
-                  key={r.t}
-                  className="flex items-center justify-between rounded-md bg-background/60 px-3 py-1.5 text-xs"
+            <div className="flex flex-wrap gap-1.5">
+              {["PUMP.FUN", "BONK"].map((c) => (
+                <span
+                  key={c}
+                  className="rounded-md border border-border bg-background/60 px-2 py-1 font-mono text-[10px] text-muted-foreground"
                 >
-                  <span className="font-mono text-foreground">{r.t}</span>
-                  <span className={`font-mono ${r.g ? "text-primary" : "text-muted-foreground"}`}>
-                    {r.v}
-                  </span>
-                </div>
+                  {c}
+                </span>
               ))}
             </div>
           </Feature>
 
           <Feature
-            idx="03 / Trending"
-            title="Tokens with a safety score"
-            body="Every token Solens recommends comes with a risk score before you ape. Liquidity, holders, mint authority — checked and shown."
+            idx="03 / Discovery"
+            title="Tokens, with context"
+            body="Finding a token is easy. Knowing what you are interacting with is harder. Solens surfaces key token information including liquidity, holder concentration, mint authority, and other risk signals before you act."
           >
             <div className="flex items-center gap-3">
               <div className="relative size-14 rounded-full border-2 border-primary/40 flex items-center justify-center">
@@ -293,14 +286,15 @@ function Features() {
 
           <Feature
             idx="04 / Liquidity"
-            title="Liquidity pools, readable"
-            body="Pick a SOL/USDC pool and see TVL, APR, bin step, and current price at a glance. Add or withdraw in one tap."
+            title="Liquidity pools, made readable"
+            body="Explore Solana liquidity pools without decoding another dashboard. Review the pool, understand the position, then add or withdraw liquidity from the same workflow."
           >
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-2">
               {[
                 { l: "TVL", v: "$42M" },
                 { l: "APR", v: "31.4%" },
-                { l: "BIN", v: "20" },
+                { l: "BIN STEP", v: "20" },
+                { l: "PRICE", v: "$1.00" },
               ].map((s) => (
                 <div key={s.l} className="rounded-md bg-background/60 px-3 py-2">
                   <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
@@ -314,8 +308,8 @@ function Features() {
 
           <Feature
             idx="05 / Markets"
-            title="Prediction markets via Kalshi"
-            body="Trade outcomes on Bitcoin, sports, politics, and culture — directly from the chat. Solens pulls live odds and routes the order."
+            title="Prediction markets from the chat"
+            body="Explore prediction markets across crypto, sports, politics, economics, and culture. Ask for the market you care about, review the outcomes and live odds, then prepare your position. Powered through Kalshi."
           >
             <div className="space-y-1.5">
               <div className="flex items-center justify-between rounded-md border border-border bg-background/60 px-3 py-2 text-xs">
@@ -331,8 +325,8 @@ function Features() {
 
           <Feature
             idx="06 / Safety"
-            title="Guardrails on every trade"
-            body="Slippage warnings, honeypot detection, suspicious contract flags. Solens flags problems before you sign — not after the SOL is gone."
+            title="Guardrails before execution"
+            body="Execution should be simple. It should still be informed. Solens surfaces important warnings before you approve a transaction — slippage, suspicious token signals, contract risk indicators, and potential honeypots."
           >
             <div className="flex items-center gap-2 rounded-md border border-primary/30 bg-primary/10 px-3 py-2">
               <Shield className="size-3.5 text-primary" />
@@ -342,8 +336,8 @@ function Features() {
 
           <Feature
             idx="07 / Portfolio"
-            title="A portfolio that talks back"
-            body="Solens reads your wallet and answers like a teammate who actually reads charts."
+            title="A portfolio you can talk to"
+            body="Your wallet should answer more than “what do I own?” Ask Solens about your holdings, performance, positions, or what is moving inside your portfolio."
           >
             <div className="rounded-lg border border-border bg-background/60 p-3">
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5">
@@ -364,9 +358,9 @@ function Features() {
           </Feature>
 
           <Feature
-            idx="08 / Onboard"
-            title="New to crypto? Just ask."
-            body="No jargon walls. Ask anything — Solens explains in plain English, then helps you act on it."
+            idx="08 / Onboarding"
+            title="New to Solana? Just ask."
+            body="No jargon walls. Ask what something means, understand it in plain English, and continue into the action when you are ready — without leaving the conversation."
           >
             <div className="rounded-lg border border-border bg-background/60 p-3">
               <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5">
@@ -393,7 +387,6 @@ function Differentiator() {
     "JUPITER",
     "RAYDIUM",
     "PUMP.FUN",
-    "BONKBOT",
     "KALSHI",
     "PHANTOM",
     "SOLFLARE",
@@ -406,7 +399,7 @@ function Differentiator() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-          [ The differentiator ]
+          [ Solana-native ]
         </span>
         <h2 className="mt-6 text-4xl md:text-6xl font-semibold tracking-[-0.025em] leading-[1.05] text-balance">
           Solana-native.
@@ -414,9 +407,10 @@ function Differentiator() {
           <span className="text-muted-foreground">Not Solana-bolted-on.</span>
         </h2>
         <p className="mt-8 max-w-2xl mx-auto text-xl text-muted-foreground leading-relaxed">
-          Other AI crypto tools treat Solana as a checkbox. Solens was built around it — which is
-          why it can do things they can&rsquo;t: pump.fun launches, Bonkbot-style sniping, Jupiter
-          routing, Raydium LPs, SPL token everything. If it ships on Solana, Solens speaks it.
+          Solens was designed around how Solana actually works — the protocols, assets, wallets,
+          markets, and workflows Solana users already interact with every day. From Jupiter routing
+          and Raydium liquidity to Pump.fun launches and SPL tokens, Solens brings the Solana
+          experience into one conversational interface.
         </p>
         <div className="mt-12 flex flex-wrap justify-center gap-2">
           {chips.map((c) => (
@@ -434,21 +428,23 @@ function Differentiator() {
 }
 
 function HowItWorks() {
-  const steps = [
+  const steps: { n: string; t: string; b: string; k?: string }[] = [
     {
       n: "01",
-      t: "Sign in with email or Google",
-      b: "No seed phrase, no browser extension, no KYC. Your Solana wallet is ready in about ten seconds.",
+      t: "Sign in",
+      b: "Continue with email or Google. No seed phrase or browser extension required to get started — your Solana wallet is created as part of onboarding.",
     },
     {
       n: "02",
-      t: "Type what you want",
-      b: '"Buy 5 SOL of WIF," "show LP options for USDC," "what\'s trending?" — plain English.',
+      t: "Say what you want",
+      b: "“Buy 5 SOL of WIF.” “Show me liquidity options for USDC.” “What tokens are trending?”",
+      k: "No command syntax required.",
     },
     {
       n: "03",
-      t: "Confirm",
-      b: "Solens handles routing, fees, and execution. You approve the final transaction.",
+      t: "Review and confirm",
+      b: "Solens prepares the route, fees, and transaction details. You review the action and approve the final transaction.",
+      k: "Your intent. Your confirmation.",
     },
   ];
   return (
@@ -468,6 +464,7 @@ function HowItWorks() {
               <div className="font-mono text-xs tracking-widest text-primary mb-8">{s.n}</div>
               <h3 className="text-2xl font-semibold tracking-tight">{s.t}</h3>
               <p className="mt-4 text-xl text-muted-foreground leading-relaxed">{s.b}</p>
+              {s.k && <p className="mt-3 text-xl text-foreground/80">{s.k}</p>}
             </div>
           ))}
         </div>
@@ -506,8 +503,8 @@ function FinalCTA() {
           <span className="text-muted-foreground">finally simplified.</span>
         </h2>
         <p className="mt-8 max-w-2xl mx-auto text-[22.5px] text-muted-foreground leading-relaxed">
-          Stop bouncing between Jupiter, Pump.fun, DEXScreener, Kalshi, and whichever Telegram bot
-          you&rsquo;re using this week. Solens is all of them — in one conversation.
+          Trade. Discover. Snipe. Explore liquidity. Follow markets. Understand your portfolio —
+          without bouncing between apps, dashboards, and bots. One conversation. Built for Solana.
         </p>
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a
@@ -518,7 +515,7 @@ function FinalCTA() {
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </a>
           <span className="font-mono text-[14px] uppercase tracking-widest text-muted-foreground">
-            No card required · Email or Google to start
+            Start with email or Google
           </span>
         </div>
       </div>
@@ -564,10 +561,10 @@ function LandingPage() {
       <Nav />
       <main>
         <Hero />
-        <Pitch />
         <Features />
         <Differentiator />
         <HowItWorks />
+        <OneInterface />
         <ReferEarn />
         <FinalCTA />
       </main>
